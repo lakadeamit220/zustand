@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 // Define the store
-const useStore = create((set) => ({
+const userStore = create((set) => ({
   // State
   user: { name: '', email: '' },
 
@@ -10,4 +10,4 @@ const useStore = create((set) => ({
   clearUser: () => set({ user: { name: '', email: '' } }),
 }));
 
-export default useStore;
+export default userStore;
