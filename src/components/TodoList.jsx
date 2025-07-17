@@ -1,7 +1,12 @@
 import todoStore from "../store/todoStore";
 
 function TodoList() {
-  const { todos, addTodo, toggleTodo, deleteTodo } = todoStore();
+  //const { todos, addTodo, toggleTodo, deleteTodo } = todoStore();
+  const todos = todoStore((state) => state.todos);
+  const addTodo = todoStore((state) => state.addTodo);
+  const toggleTodo = todoStore((state) => state.toggleTodo);
+  const deleteTodo = todoStore((state) => state.deleteTodo);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const text = e.target.todo.value;
