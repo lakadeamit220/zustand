@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-const useStore = create((set) => ({
+const todoStore = create((set) => ({
   // Todo state
   todos: [],
   addTodo: (text) => set((state) => ({
@@ -13,4 +13,4 @@ const useStore = create((set) => ({
   })),
 }));
 
-export default useStore;
+export default todoStore;
