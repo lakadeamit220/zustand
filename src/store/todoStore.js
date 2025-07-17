@@ -11,6 +11,9 @@ const todoStore = create((set) => ({
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ),
   })),
+  deleteTodo: (id) => set((state) => ({
+    todos: state.todos.filter((todo) => todo.id !== id),
+  })),
 }));
 
 export default todoStore;

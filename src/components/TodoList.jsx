@@ -1,7 +1,7 @@
 import todoStore from "../store/todoStore";
 
 function TodoList() {
-  const { todos, addTodo, toggleTodo } = todoStore();
+  const { todos, addTodo, toggleTodo, deleteTodo } = todoStore();
   const handleSubmit = (e) => {
     e.preventDefault();
     const text = e.target.todo.value;
@@ -40,12 +40,20 @@ function TodoList() {
             >
               {todo.text}
             </span>
-            <button
-              onClick={() => toggleTodo(todo.id)}
-              className="text-blue-500 hover:underline"
-            >
-              {todo.completed ? "Undo" : "Complete"}
-            </button>
+            <div>
+              <button
+                onClick={() => toggleTodo(todo.id)}
+                className="text-blue-500 hover:underline mr-2"
+              >
+                {todo.completed ? "Undo" : "Complete"}
+              </button>
+              <button
+                onClick={() => deleteTodo(todo.id)}
+                className="text-red-500 hover:underline"
+              >
+                Delete
+              </button>
+            </div>
           </li>
         ))}
       </ul>

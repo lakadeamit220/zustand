@@ -4,8 +4,8 @@ import User from "./components/User";
 function App() {
   return (
     <>
-      {/* <User /> */}
-      <TodoList />
+      <User />
+      {/* <TodoList /> */}
     </>
   );
 }
